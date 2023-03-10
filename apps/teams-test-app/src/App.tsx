@@ -47,6 +47,7 @@ import TeamsCoreAPIs from './components/TeamsCoreAPIs';
 import { isTestBackCompat } from './components/utils/isTestBackCompat';
 import Version from './components/Version';
 import WebStorageAPIs from './components/WebStorageAPIs';
+import CartAPIs from './components/CartAPIs';
 
 const urlParams = new URLSearchParams(window.location.search);
 
@@ -114,6 +115,7 @@ const App = (): ReactElement => {
   return (
     <div>
       <div className="App-container">
+        <CartAPIs />
         <AppAPIs />
         <AppInitializationAPIs />
         <AppInstallDialogAPIs />
