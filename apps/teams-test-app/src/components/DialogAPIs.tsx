@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-types */
-import { dialog } from '@microsoft/teams-js';
+import { dialog } from '../../teams-js/src';
 import React, { ReactElement } from 'react';
 
 import { ApiWithoutInput } from './utils';

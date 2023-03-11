@@ -1,6 +1,6 @@
 import './App.css';
 
-import { app, appInitialization, initialize } from '@microsoft/teams-js';
+import { app, appInitialization, initialize } from '../teams-js/src';
 import React, { ReactElement } from 'react';
 
 import AppAPIs from './components/AppAPIs';

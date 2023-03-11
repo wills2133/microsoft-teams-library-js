@@ -1,4 +1,4 @@
-import { location, SdkError } from '@microsoft/teams-js';
+import { location, SdkError } from '../../teams-js/src';
 import React, { ReactElement } from 'react';
 
 import { ApiWithoutInput, ApiWithTextInput } from './utils';
