@@ -99,4 +99,71 @@ export namespace monetization {
   export function isSupported(): boolean {
     return ensureInitialized(runtime) && runtime.supports.monetization ? true : false;
   }
+  /**
+  * Namespace for marketplace interaction
+  */
+  namespace marketplace {
+    export enum Intent {
+        admin= 'admin',
+        endUser='endUser',
+    }
+    export enum CartStatus {
+        open= 'open',
+        closed='closed',
+    }
+    export interface Cart {
+        readonly instanceId: string;
+        readonly market?: string;
+        readonly intent?: string;
+        readonly locale?: string;
+        status: CartStatus;
+        orderId?: string;
+        cartItems?: CartItem[];
+    }
+    export interface CartItem {
+        itemId: number;
+        quantity: number;
+        imageURL?: string;
+        price?: number;
+        name?: string;
+    }
+    /**
+    * get cart object for app to checkout.
+    *
+    */
+    export function getCart(): Promise<Cart> {
+      return new Promise<Cart>((resolve) => {
+        if (!isSupported()) {
+          throw errorNotSupportedOnPlatform;
+        }
+        resolve(sendAndHandleSdkError('monetization.marketplace.getCart'));
+      });
+    }
+    /**
+    * update cart object in host
+    *
+    * @param cart - An object containing all product items and cart status.
+    * 
+    * @returns boolean to represent whether the set operation is success or not
+    */
+    export function setCart(cart: Cart): Promise<boolean> {
+      return new Promise<boolean>((resolve) => {
+        if (!isSupported()) {
+          throw errorNotSupportedOnPlatform;
+        }
+        resolve(sendAndHandleSdkError('monetization.marketplace.setCart', cart));
+      });
+    }
+    /**
+    * @hidden
+    *
+    * Checks if the monetization.marketplace capability is supported by the host
+    * @returns boolean to represent whether the monetization capability is supported
+    *
+    * @throws Error if {@linkcode app.initialize} has not successfully completed
+    */
+    export function isSupported(): boolean {
+      return ensureInitialized(runtime) && runtime.supports.monetization.marketplace ? true : false;
+    }
+  }
 }
