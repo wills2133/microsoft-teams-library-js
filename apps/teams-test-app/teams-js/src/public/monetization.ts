@@ -102,7 +102,7 @@ export namespace monetization {
   /**
   * Namespace for marketplace interaction
   */
-  namespace marketplace {
+  export namespace marketplace {
     export enum Intent {
         admin= 'admin',
         endUser='endUser',
@@ -163,7 +163,7 @@ export namespace monetization {
     * @throws Error if {@linkcode app.initialize} has not successfully completed
     */
     export function isSupported(): boolean {
-      return ensureInitialized(runtime) && runtime.supports.monetization.marketplace ? true : false;
+      return ensureInitialized(runtime) //&& runtime.supports.monetization.marketplace ? true : false;
     }
   }
 }

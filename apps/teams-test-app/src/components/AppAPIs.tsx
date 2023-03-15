@@ -1,4 +1,4 @@
-import { app, Context, executeDeepLink, getContext, registerOnThemeChangeHandler } from '@microsoft/teams-js';
+import { app, Context, executeDeepLink, getContext, registerOnThemeChangeHandler } from '../../teams-js/src';
 import React, { ReactElement } from 'react';
 
 import { ApiWithoutInput, ApiWithTextInput } from './utils';
