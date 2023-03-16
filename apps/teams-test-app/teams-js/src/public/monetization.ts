@@ -2,7 +2,7 @@ import { sendAndHandleSdkError } from '../internal/communication';
 import { ensureInitialized } from '../internal/internalAPIs';
 import { callCallbackWithErrorOrResultOrNullFromPromiseAndReturnPromise, InputFunction } from '../internal/utils';
 import { errorNotSupportedOnPlatform, FrameContexts } from './constants';
-import { SdkError } from './interfaces';
+import { Cart, SdkError } from './interfaces';
 import { runtime } from './runtime';
 
 export namespace monetization {
@@ -103,30 +103,6 @@ export namespace monetization {
   * Namespace for marketplace interaction
   */
   export namespace marketplace {
-    export enum Intent {
-        admin= 'admin',
-        endUser='endUser',
-    }
-    export enum CartStatus {
-        open= 'open',
-        closed='closed',
-    }
-    export interface Cart {
-        readonly instanceId: string;
-        readonly market?: string;
-        readonly intent?: string;
-        readonly locale?: string;
-        status: CartStatus;
-        orderId?: string;
-        cartItems?: CartItem[];
-    }
-    export interface CartItem {
-        itemId: number;
-        quantity: number;
-        imageURL?: string;
-        price?: number;
-        name?: string;
-    }
     /**
     * get cart object for app to checkout.
     *
