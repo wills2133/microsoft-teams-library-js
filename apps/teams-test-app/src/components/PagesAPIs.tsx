@@ -10,7 +10,7 @@ import {
   settings,
   shareDeepLink,
   ShareDeepLinkParameters,
-} from '@microsoft/teams-js';
+} from '../../teams-js/src';
 import React, { ReactElement } from 'react';
 
 import { ApiWithCheckboxInput, ApiWithoutInput, ApiWithTextInput } from './utils';

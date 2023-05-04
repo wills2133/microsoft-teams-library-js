@@ -115,6 +115,8 @@ const App = (): ReactElement => {
   return (
     <div>
       <div className="App-container">
+        <DialogUrlAPIs />
+        <PagesConfigAPIs />
         <CartAPIs />
         <AppAPIs />
         <AppInitializationAPIs />
@@ -128,7 +130,6 @@ const App = (): ReactElement => {
         <DialogAPIs />
         <DialogCardAPIs />
         <DialogUpdateAPIs />
-        <DialogUrlAPIs />
         <FilesAPIs />
         <FullTrustAPIs />
         <GeoLocationAPIs />
@@ -145,7 +146,6 @@ const App = (): ReactElement => {
         <PagesAPIs />
         <PagesAppButtonAPIs />
         <PagesBackStackAPIs />
-        <PagesConfigAPIs />
         <PagesCurrentAppAPIs />
         <PagesTabsAPIs />
         <PeopleAPIs />

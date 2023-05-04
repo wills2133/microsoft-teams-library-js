@@ -1,4 +1,4 @@
-import { pages, registerChangeSettingsHandler, settings } from '@microsoft/teams-js';
+import { pages, registerChangeSettingsHandler, settings } from '../../teams-js/src';
 import React, { ReactElement } from 'react';
 
 import { noHostSdkMsg } from '../App';
@@ -134,9 +134,7 @@ const RegisterChangeConfigHandler = (): React.ReactElement =>
     title: 'Register Change Config Handler',
     onClick: {
       withPromise: async (setResult) => {
-        pages.config.registerChangeConfigHandler((): void => {
-          setResult('successfully called');
-        });
+        pages.config.registerChangeConfigHandler((): void => console.log('successfully called'));
         return 'pages.config.registerChangeConfigHandler()' + noHostSdkMsg;
       },
       withCallback: (setResult) => {
