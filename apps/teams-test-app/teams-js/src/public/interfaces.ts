@@ -1020,27 +1020,16 @@ export interface AdaptiveCardVersion {
 /**
  * the cart object for a marketplace vendor app checkout flow
  */
-export enum Intent {
-  admin= 'admin',
-  endUser='endUser',
-}
-export enum CartStatus {
-  open= 'open',
-  closed='closed',
-}
-export interface Cart {
-  readonly instanceId: string;
-  readonly market?: string;
-  readonly intent?: string;
-  readonly locale?: string;
-  status: CartStatus;
-  orderId?: string;
-  cartItems?: CartItem[];
-}
+
 export interface CartItem {
   itemId: number;
   quantity: number;
   imageURL?: string;
   price?: number;
   name?: string;
+}
+export interface Cart {
+  readonly id: string;
+  readonly version: number;
+  cartItems?: CartItem[];
 }
